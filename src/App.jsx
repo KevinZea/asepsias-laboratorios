@@ -49,8 +49,13 @@ import certificaciones from "./assets/certificaciones.jpg";
 import equipo from "./assets/equipo.jpg";
 import lab from "./assets/lab.jpg";
 import WhatsAppButton from './Components/WhatsappButton/WhatsappButton';
-import PDFViewerButton from './Components/PDF/PDFViewerButton';
-import cartapresentacion from "./assets/CARTAPRESENTACION.pdf";
+import envase from "./assets/envase.jpg";
+
+const handleClickPdf = (url) => {
+  // Construye la URL de WhatsApp
+  // Redirecciona al usuario a WhatsApp
+  window.open(url, '_blank');
+};
 
 const Header = () => {
   const bgColor = useColorModeValue('blue.600', 'blue.800');
@@ -140,11 +145,7 @@ const Navbar = () => {
     </Box>
   );
 };
-const handleClickPdf = (url) => {
-  // Construye la URL de WhatsApp
-  // Redirecciona al usuario a WhatsApp
-  window.open(url, '_blank');
-};
+
 // Hero Section
 const Hero = () => {
   const phoneNumber = '573177828119';
@@ -181,8 +182,11 @@ const Hero = () => {
                 colorScheme="white"
                 variant="outline"
                 _hover={{ bg: 'white', color: 'blue.600' }}
+                onClick={() => {handleClickPdf("https://drive.google.com/file/d/1l2XIaIOQH17aV3gtXdV3Lgknp5GMnRJF/view?usp=sharing")}}
               >
-                Conocer Más
+                1. Conocer Más
+                <br />
+                (Precontrato de Franquicias)
               </Button>
               <Button
                 size="lg"
@@ -361,38 +365,55 @@ const MainContent = () => {
       title: "Desinfectantes Antivirales Anticovid19",
       icon: desinfectante,
       description: "Soluciones efectivas para la desinfección y protección contra virus.",
-      link: "https://drive.google.com/file/d/1cFJ3sDfbVjo18lVlh-d4mVlxjWbGfgPz/view?usp=sharing"
+      link: "https://drive.google.com/file/d/1cFJ3sDfbVjo18lVlh-d4mVlxjWbGfgPz/view?usp=sharing",
+      id: "4"
     },
     {
       title: "Aceites Esenciales Certificados",
       icon: aceites,
-      description: "Productos naturales con certificación de calidad internacional."
+      description: "Productos naturales con certificación de calidad internacional.",
+      id: "5",
+      link: "https://drive.google.com/file/d/1HOcQf-yQn51sy73zoiLp0z2BQKi6Y6dm/view?usp=sharing"
     },
     {
       title: "Aguas Especiales y Técnicas",
       icon: aguas,
-      description: "Aguas procesadas para uso específico en laboratorio."
+      description: "Aguas procesadas para uso específico en laboratorio.",
+      id: "6",
     },
     {
       title: "Terapia y Dieta Anticáncer Gerson",
       icon: dieta,
-      description: "Protocolos especializados para terapias alternativas."
+      description: "Protocolos especializados para terapias alternativas.",
+      link: "https://drive.google.com/file/d/145AsibIFuoWoZOX2GzcBiGdvPJTqyPzd/view?usp=sharing",
+      id: "7",
     },
     {
       title: "Alcoholes de 7 tipos",
       icon: alcoholes,
-      description: "Variedad de alcoholes para diferentes aplicaciones."
+      description: "Variedad de alcoholes para diferentes aplicaciones.",
+      id: "8",
     },
     {
       title: "Glicoles de 7 tipos",
       icon: glicoles,
-      description: "Compuestos químicos para usos específicos."
+      description: "Compuestos químicos para usos específicos.",
+      id: "9",
     },
     {
       title: "Asesorías en Salud Pública",
       icon: asesoria,
-      description: "Consultoría especializada en temas de salud pública."
-    }
+      description: "Consultoría especializada en temas de salud pública.",
+      id: "10",
+      link: "https://drive.google.com/file/d/145AsibIFuoWoZOX2GzcBiGdvPJTqyPzd/view?usp=sharing"
+    },
+    {
+      title: "Envasado y Etiquetado",
+      icon: envase,
+      description: "Servicios de envasado y etiquetado de productos.",  
+      id: "11",
+      link: "https://drive.google.com/file/d/13FOuRBgJ1B6BEYW-Zct8uxCLm7wMmRg6/view?usp=sharing"
+    },
   ];
 
   return (
@@ -453,6 +474,7 @@ const MainContent = () => {
                       colorScheme="blue"
                       size="sm"
                       rightIcon={<Icon as={InfoIcon} />}
+                      onClick={() => handleClickPdf(dept.link)}
                     >
                       Más información
                     </Button>
@@ -479,14 +501,15 @@ const MainContent = () => {
               </Text>
               <Button
                 size="lg"
-                colorScheme="white"
-                variant="solid"
+                colorScheme="blue"
+                variant="outline"
                 _hover={{ transform: 'translateY(-2px)', boxShadow: 'lg' }}
                 transition="all 0.2s"
                 rightIcon={<Icon as={InfoIcon} />}
-                onClick={() => handleClickPdf("https://drive.google.com/file/d/1Lqdp6IV8KUblWBFO1VhFta5q5wH1hSlc/view?usp=sharing")}
+                onClick={() => handleClickPdf("https://drive.google.com/file/d/18HBacmfKcaK-xwPIBgsvlghErNnE1ie2/view?usp=sharing")}
+                color={"white"}
               >
-                Descargar Carta de Presentación
+                3. Ver Carta de Presentación
               </Button>
               {/* <PDFViewerButton
                   // pdfPath={cartapresentacion}
@@ -550,6 +573,13 @@ const AboutUs = () => {
               Nuestro compromiso es proporcionar soluciones de alta calidad para satisfacer las necesidades
               de nuestros clientes.
             </Text>
+            <Button
+              onClick={() => handleClickPdf("https://drive.google.com/file/d/1KewBI35davJsUBZWY-n6jEAv-4sa7O96/view?usp=sharing")}
+              colorScheme='blue'
+              variant='outline'
+            >
+              2. Ver Nuestros Mercados
+            </Button>
 
             <VStack spacing={6} align="stretch" w="full">
               {features.map((feature, index) => (
