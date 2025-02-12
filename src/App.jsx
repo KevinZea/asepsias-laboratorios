@@ -64,21 +64,35 @@ const Header = () => {
     <Box bg={bgColor} py={3} color="white">
       <Container maxW="container.xl">
         <Grid
-          templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(4, 1fr)' }}
-          gap={4}
+          templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(5, 1fr)' }}
+          gap={2}
           fontSize="sm"
         >
           <HStack spacing={2}>
             <Icon as={PhoneIcon} />
-            <Text>+57 (1) 6017595967 - +57 (1) 6017018416</Text>
+            <Text>+57 (1) 6017595967</Text>
           </HStack>
           <HStack spacing={2}>
             <Icon as={EmailIcon} />
-            <Text>ayuda@asepsiaslaboratorio.com</Text>
+            <Text>info@asepsias-laboratorio.com</Text>
           </HStack>
-          <HStack spacing={2}>
+          <HStack spacing={1}>
             <Icon as={InfoIcon} />
-            <Text>Parque Empresarial Mosquera</Text>
+            <Text>Parque Empresarial Mosquera II MZ: 05 UD:074 Km 18.5 - Via Soacha, Cund, Colombia, America</Text>
+          </HStack>
+          <HStack spacing={1}>
+            <Text>
+              <Icon as={InfoIcon} />
+              Casa Bodega1 Castilla
+            </Text>
+            <Text>
+              <Icon as={InfoIcon} />
+              Casa Bodega2 Castilla
+            </Text>
+            <Text>
+              <Icon as={InfoIcon} />
+              Casa Bodega3 Toberin
+            </Text>
           </HStack>
           <HStack spacing={2}>
             <Icon as={ChatIcon} />
@@ -171,10 +185,13 @@ const Hero = () => {
               Laboratorio Certificado
             </Badge>
             <Heading size="2xl" lineHeight="shorter">
-              Soluciones de Calidad para su Laboratorio
+              Insumos de Norma Obligatoria
             </Heading>
+            <Text fontSize={"md"}>
+              Para cualquier mercado.
+            </Text>
             <Text fontSize="xl">
-              Especialistas en productos de higiene y salud pública
+              Especialistas en insumos de salud pública
             </Text>
             <HStack spacing={4}>
               <Button
@@ -182,7 +199,7 @@ const Hero = () => {
                 colorScheme="white"
                 variant="outline"
                 _hover={{ bg: 'white', color: 'blue.600' }}
-                onClick={() => {handleClickPdf("https://drive.google.com/file/d/1l2XIaIOQH17aV3gtXdV3Lgknp5GMnRJF/view?usp=sharing")}}
+                onClick={() => { handleClickPdf("https://drive.google.com/file/d/1l2XIaIOQH17aV3gtXdV3Lgknp5GMnRJF/view?usp=sharing") }}
               >
                 1. Conocer Más
                 <br />
@@ -190,15 +207,35 @@ const Hero = () => {
               </Button>
               <Button
                 size="lg"
-                bg="green.500"
-                color={"white"}
-                _hover={{ bg: 'green.600' }}
-                leftIcon={<Icon as={FaWhatsapp} />}
-                onClick={handleClick}
+                colorScheme="white"
+                variant="outline"
+                _hover={{ bg: 'white', color: 'blue.600' }}
+                onClick={() => { handleClickPdf("") }}
               >
-                Contactar por WhatsApp
+                2. Mercados
+                <br />
+              </Button>
+              <Button
+                size="lg"
+                colorScheme="white"
+                variant="outline"
+                _hover={{ bg: 'white', color: 'blue.600' }}
+                onClick={() => { handleClickPdf("") }}
+              >
+                2. Insumos y Productos
+                <br />
               </Button>
             </HStack>
+            <Button
+              size="lg"
+              bg="green.500"
+              color={"white"}
+              _hover={{ bg: 'green.600' }}
+              leftIcon={<Icon as={FaWhatsapp} />}
+              onClick={handleClick}
+            >
+              Contactar por WhatsApp
+            </Button>
           </VStack>
           <Box data-aos="fade-left" data-aos-delay="300">
             <Image
@@ -319,7 +356,7 @@ const Footer = () => {
             </HStack>
             <HStack>
               <Icon as={EmailIcon} />
-              <Text>ayuda@asepsiaslaboratorio.com</Text>
+              <Text>info@asepsias-laboratorio.com</Text>
             </HStack>
           </VStack>
           <VStack align="start" spacing={4}>
@@ -410,7 +447,7 @@ const MainContent = () => {
     {
       title: "Envasado y Etiquetado",
       icon: envase,
-      description: "Servicios de envasado y etiquetado de productos.",  
+      description: "Servicios de envasado y etiquetado de productos.",
       id: "11",
       link: "https://drive.google.com/file/d/13FOuRBgJ1B6BEYW-Zct8uxCLm7wMmRg6/view?usp=sharing"
     },
